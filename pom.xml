@@ -4,9 +4,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId></groupId>
-    <artifactId></artifactId>
-    <version></version>
+    <groupId>org.nuxeo</groupId>
+    <artifactId>nuxeo-addons-parent</artifactId>
+    <version>8.2</version>
   </parent>
 
   <groupId>org.nuxeo.workshop.products</groupId>
@@ -20,7 +20,8 @@
   <dependencies>
     <dependency>
       <groupId>javax.ws.rs</groupId>
-      <artifactId>jsr311-api</artifactId>
+      <artifactId>javax.ws.rs-api</artifactId>
+      <version>2.0</version>
     </dependency>
     <dependency>
       <groupId>org.nuxeo.ecm.webengine</groupId>
@@ -30,7 +31,11 @@
       <groupId>org.nuxeo.ecm.webengine</groupId>
       <artifactId>nuxeo-webengine-base</artifactId>
     </dependency>
-
+    <dependency>
+      <artifactId>nuxeo-workshop-products-core</artifactId>
+      <groupId>org.nuxeo.workshop.products</groupId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.core</artifactId>
@@ -42,34 +47,6 @@
       <optional>false</optional>
     </dependency>
   </dependencies>
-
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-eclipse-plugin</artifactId>
-        <configuration>
-          <additionalProjectnatures>
-            <projectnature>org.nuxeo.ide.NuxeoNature</projectnature>
-          </additionalProjectnatures>
-          <classpathContainers>
-            <classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
-            <classpathContainer>org.nuxeo.ide.SDK_CONTAINER</classpathContainer>
-            <classpathContainer>org.nuxeo.ide.SDK_TEST_CONTAINER</classpathContainer>
-          </classpathContainers>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 
   <repositories>
     <repository>
